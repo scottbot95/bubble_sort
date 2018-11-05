@@ -34,4 +34,3 @@ describe('Bubble Sort', function(){
     expect(compare.calls.count()).toEqual(3);
   });
 });
-

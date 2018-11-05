@@ -5,3 +5,4 @@ function split(array) {
 
   return [left, right];
 }
+
