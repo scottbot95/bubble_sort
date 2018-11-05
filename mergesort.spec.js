@@ -13,3 +13,26 @@ describe('Merge function', function(){
     expect( merge([1,2], [5,8,10]) ).toEqual([1,2,5,8,10]);
   });
 });
+
+describe('mergeSort function', function() {
+  it('is a function', function() {
+    expect(typeof mergeSort).toEqual('function');
+  });
+
+  it('handles an empty array', function(){
+    expect( mergeSort([]) ).toEqual( [] );
+  });
+
+  it('handles an single-item array', function () {
+    expect( mergeSort([1]) ).toEqual( [1] );
+  });
+
+  it('handles a pre-sorted array', function() {
+    expect( mergeSort([1, 2, 3, 4, 8, 10]) ).toEqual( [1, 2, 3, 4, 8, 10] );
+  });
+
+  it('handles a multi-item unsorted array', function() {
+    expect( mergeSort([10, 2, 8, 3, 4, 1]) ).toEqual( [1, 2, 3, 4, 8, 10] );
+    // expect( mergeSort([10, 2, 8, 3, 4, 1]) ).toEqual( [1, 2, 3, 4, 8, 10] );
+  });
+});

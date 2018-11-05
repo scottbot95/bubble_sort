@@ -24,3 +24,15 @@ function merge(arr1, arr2) {
 
   return merged;
 }
+
+function mergeSort(array) {
+  if (array.length <= 1) {
+    return array;
+  }
+
+  let halves = split(array);
+  let left = mergeSort(halves[0]);
+  let right = mergeSort(halves[1]);
+
+  return merge(left, right);
+}
