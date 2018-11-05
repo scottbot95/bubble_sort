@@ -1,3 +1,11 @@
+function defaultCompare(a,b) {
+  return a < b;
+}
+
+function descending(a, b) {
+  return b < a;
+}
+
 function split(array) {
   const pivot = Math.floor(array.length / 2);
   let left = array.slice(0, pivot);
@@ -6,11 +14,11 @@ function split(array) {
   return [left, right];
 }
 
-function merge(arr1, arr2) {
+function merge(arr1, arr2, comparator=defaultCompare) {
   let merged = [];
   let i = 0, j = 0;
   while(i < arr1.length && j < arr2.length) {
-    if (arr1[i] < arr2[j]) {
+    if (comparator(arr1[i], arr2[j])) {
       merged.push(arr1[i++]);
     } else {
       merged.push(arr2[j++]);
